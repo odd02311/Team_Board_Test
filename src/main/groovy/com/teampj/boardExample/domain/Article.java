@@ -25,9 +25,9 @@ import java.util.Set;
     @Index(columnList =  "createdBy")
 })
 
-@EntityListeners(AuditingEntityListener.class)
+
 @Entity
-public class Article {
+public class Article extends AuditingFields{ // 상속으로 필드 연결
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -46,11 +46,8 @@ public class Article {
     private final Set<ArticleComment> articleComments = new LinkedHashSet<>();
 
 
-    // 메타 데이터
-    @CreatedDate @Column (nullable = false) private LocalDateTime createdAt;  // 생성일시
-    @CreatedBy @Column (nullable = false, length = 100) private String createdBy; // 생성자
-    @LastModifiedDate @Column(nullable = false) private LocalDateTime modifiedAt; // 수정일시
-    @LastModifiedBy @Column(nullable = false, length = 100) private String modifiedBy; // 수정자
+
+//    @Embedded // 메타 데이터를 묶은 클래스를 만들어서 이 안에 필드를 추가
 
 
     // 기본 생성자
