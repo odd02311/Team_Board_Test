@@ -1,5 +1,6 @@
 package com.teampj.boardExample.controller;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +17,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-@DisplayName("Data REST - API Test")
+@Disabled("Spring Data Rest 통합테스트는 너무 무거우므로 제외시킴")
+@DisplayName("Data REST - API Test") // Repository에 mocking하면 에러가 남 그래서 db에 접근하게 함
 // integration test(API를 실행한 결과가 Repository까지 실행)이기 때문에 db에 영향을 줘서 롤백을 해줘야 함
 @Transactional // test 롤백
 @AutoConfigureMockMvc
