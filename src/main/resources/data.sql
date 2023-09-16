@@ -530,7 +530,7 @@ Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odi
         '2021-07-19 14:18:17', '2022-01-23 17:29:54')
 ;
 
--- 1000 댓글
+-- 300 댓글
 insert into article_comment (article_id, content, created_at, modified_at, created_by, modified_by)
 values (49,
         'Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.',
