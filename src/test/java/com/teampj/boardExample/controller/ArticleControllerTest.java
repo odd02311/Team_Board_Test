@@ -22,18 +22,17 @@ class ArticleControllerTest {
     this.mvc = mvc;
   }
 
-  @Disabled("구현 중")
   @DisplayName("[view] [GET] contents list (board) page") // 게시글 리스트 (게시판) 페이지 - 정상 호출
   @Test
   public void whenRequestingArticlesView_thenReturnsArticlesView() throws Exception {
     // given
 
     // when & then
-    mvc.perform(get("/articles"))
-        .andExpect(status().isOk())
-        .andExpect(content().contentType(MediaType.TEXT_HTML))
-        .andExpect(view().name("articles/index"))
-        .andExpect(model().attributeExists("articles"));
+    mvc.perform(get("/articles")) // /articles 경로로 요청하면
+        .andExpect(status().isOk()) // OK 떨어진다
+        .andExpect(content().contentTypeCompatibleWith(MediaType.TEXT_HTML)) // TEXT_HTML 컨텐트 타입으로 보여진다.
+        .andExpect(view().name("articles/index")) // view이름은 articles/index에 있어야한다.
+        .andExpect(model().attributeExists("articles")); // 데이터로 articles를 넘겨줘야한다.
   }
 
   @Disabled("구현 중")
