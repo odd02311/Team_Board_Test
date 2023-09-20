@@ -94,8 +94,8 @@ class JpaRepositoryTest {
     // then
     assertThat(articleRepository.count()).isEqualTo(previousArticleCount - 1);
     assertThat(articleCommentRepository.count()).isEqualTo(previousArticleCommentCount - deletedCommentsSize);
-  
 
-    // 소스트리 변경점
+
+
   }
 }
