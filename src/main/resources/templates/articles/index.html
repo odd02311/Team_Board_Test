@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>게시판 페이지</title>
+</head>
+
+<body>
+
+<!-- semantic tag 사용 -->
+  <header th:replace="header :: header"></header>
+
+  <main>
+    <form>
+<!--      필터: 제목, 본문, id, 닉네임, 해시태그-->
+      <label for="search-type" hidden> search type : 필터: 제목, 본문, id, 닉네임, 해시태그 </label>
+      <select id="search-type" name="search-type">
+        <option>제목</option>
+        <option>본문</option>
+        <option>ID</option>
+        <option>닉네임</option>
+        <option>해시태그</option>
+      </select>
+      <label for="search-value" hidden>검색어</label>
+      <input id="search-value" type="search" placeholder="검색어 입력" name="search-value">
+      <button type="submit">Do 검색</button>
+    </form>
+    <table>
+      <thead>
+        <tr>
+          <th>제목</th>
+          <th>해시태그</th>
+          <th>작성자</th>
+          <th>작성일</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>첫번째글</td>
+          <td>#etwadsf-151233</td>
+          <td>작성자</td>
+          <td>2023-09-16</td>
+        </tr>
+        <tr>
+          <td>두번째글</td>
+          <td>#etwf-1513125123</td>
+          <td>작성자2</td>
+          <td>2023-09-17</td>
+        </tr>
+        <tr>
+          <td>세번째글</td>
+          <td>#esdewdf-15124asd</td>
+          <td>작성자3</td>
+          <td>2023-09-18</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <nav>
+      <table>
+        <tr>
+          <td>previous</td>
+          <td>1</td>
+          <td>2</td>
+          <td>3</td>
+          <td>4</td>
+          <td>next</td>
+        </tr>
+      </table>
+    </nav>
+  </main>
+
+  <footer th:replace="footer :: footer"></footer>
+
+
+
+</body>
+</html>
